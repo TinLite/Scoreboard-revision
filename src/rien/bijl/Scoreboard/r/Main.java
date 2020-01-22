@@ -1,6 +1,5 @@
 package rien.bijl.Scoreboard.r;
 
-import org.apache.commons.lang3.StringEscapeUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.Scoreboard;
@@ -30,7 +29,6 @@ public class Main extends JavaPlugin {
     private void init()
     {
         Session.plugin = this;
-        Session.isUpToDate("14754");
         ConfigControl.get().createDataFiles();
         empty = getServer().getScoreboardManager().getNewScoreboard();
 
@@ -109,8 +107,7 @@ public class Main extends JavaPlugin {
      */
     public static void finished()
     {
-        System.out.println("Scoreboard is online! Scoreboard version: " + Session.plugin.getDescription().getVersion() +
-        " (" + (Session.isuptodate ? "UP TO DATE" : "OUTDATED") + ")");
+        System.out.println("Scoreboard is online! Scoreboard version: " + Session.plugin.getDescription().getVersion());
 
         System.out.println();
     }
